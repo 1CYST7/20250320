@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>自我介紹</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    h2 {
+      color: #7a7a7a; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>歡迎來到我的自我介紹網站</h1>
+    
+  </header>
+
+  <section id="about">
+    <h2>關於我</h2>
+    <p>你好！我是胡芊杏，就讀於南臺科技大學資工系。</p>
+  </section>
+
+  <section id="skills">
+    <h2>學過的程式語言</h2>
+    <ul>
+      <li>HTML / CSS / JavaScript</li>
+      <li>Arduino 開發</li>
+      <li>物聯網應用</li>
+      <li>嵌入式系統設計</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>有甚麼意見啦</h2>
+    <form id="contact-form">
+      
+
+      <label for="message">訊息：</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">送出</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const message = document.getElementById('message').value;
+      alert(`謝謝你的訊息！我還是不會改^^\n訊息: ${message}`);
+    });
+  </script>
+</body>
+</html>
