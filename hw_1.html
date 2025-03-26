@@ -21,17 +21,27 @@
     th {
       background-color: #f0f0f0;
     }
+    a {
+            border: 2px solid #d6c2b9; /* 綠色邊框，2px寬 */
+            border-radius: 8px; /* 圓角邊框 */
+            padding: 10px 20px; /* 內邊距讓內容不貼邊 */
+            display: inline-block; /* 讓連結更像按鈕 */
+            text-decoration: none; /* 移除底線 */
+            color: #1b1b1b; 
+            transition: all 0.3s ease; /* 添加過渡效果 */
+          }
+          a:hover {
+            background-color: #a5969b; 
+            color: white; 
+          }
   </style>
 </head>
-<body>
-  <header>
-    <h1>N*N 乘法表</h1>
-    <hr />
-  </header>
+
   <a href="index.html">首頁</a>
   <a href="about.html">關於我</a>
   <a href="research.html">研究</a>
-  <a href="hw_1.html">作業</a>
+  <a href="hw_1.html">N*N 乘法表</a>
+  <h1>N*N 乘法表</h1><hr />
   <section>
     <label for="number">請輸入 N 值：</label>
     <input type="number" id="number" min="1" value="5">
