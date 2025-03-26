@@ -1,4 +1,4 @@
-body{
+.container{
     background-color:antiquewhite;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -9,4 +9,38 @@ body{
     border: 1px dashed rgb(141, 141, 145);
     border-radius: 20px;
     margin: 50px;
+}
+
+.game-area{
+    width: 80%;
+    border-radius: 10px;
+    padding:20px;
+    margin: 5px;
+}
+#game-info{
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#controls{
+    width: 210px;
+    align-items: center;
+    border-radius: 5px;
+    background-color:darkgrey;
+}
+#game-container{
+    border-radius: 15px;
+    background-color:gainsboro;
+}
+a {
+    border: 2px solid #d6c2b9; /* 綠色邊框，2px寬 */
+    border-radius: 8px; /* 圓角邊框 */
+    padding: 10px 20px; /* 內邊距讓內容不貼邊 */
+    display: inline-block; /* 讓連結更像按鈕 */
+    text-decoration: none; /* 移除底線 */
+    color: #1b1b1b; 
+    transition: all 0.3s ease; /* 添加過渡效果 */
+}
+a:hover {
+    background-color: #a5969b; 
+    color: white; 
 }
