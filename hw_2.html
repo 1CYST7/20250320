@@ -8,13 +8,20 @@
     <script src="hw_2.js"></script>
 </head>
 <body>
-    
+    <div style="display: flex; justify-content: center; gap: 10px;">
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於我</a>
+        <a href="research.html">研究</a>
+        <a href="hw_1.html">N*N 乘法表</a>
+        <a href="hw_2.html">Water Puzzle Game</a>
+    </div>
     <div class="container">
         <h1>2025 Water Puzzle Game</h1>
-        <div id="game-info">
+        <div id="game-info"  class="game-area">
+            <p>關卡：<span id=level-count>1</span></p>
             <p>移動次數：</p>
         </div>
-        <div id="controls">
+        <div id="controls"  class="game-area">
             <label for="level-select">選擇關卡</label>
             <select id="level-select">
                 <option value="1">Level 1</option>
@@ -35,13 +42,7 @@
         </div>
         
     </div>
-    <div style="display: flex; justify-content: center; gap: 10px;">
-        <a href="index.html">首頁</a>
-        <a href="about.html">關於我</a>
-        <a href="research.html">研究</a>
-        <a href="hw_1.html">N*N 乘法表</a>
-        <a href="hw_2.html">Water Puzzle Game</a>
-    </div>
+    
     
     
     
