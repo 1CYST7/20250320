@@ -3,53 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的自我介紹</title>
+  <title>就學經歷</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="index-style.css" />
-  
-
+  <link rel="stylesheet" href="experience-style.css" />
 </head>
 <body>
-  
   <header>
     <nav>
-    <a href="index.html">
-      <h1>Self Introduction</h1>
-    </a>    
+      <a href="index.html"><h1>Self Introduction</h1></a>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link active">首頁</a></li>
+        <li><a href="index.html" class="nav-link">首頁</a></li>
         <li><a href="about.html" class="nav-link">關於我</a></li>
-        <li><a href="experience.html" class="nav-link">就學經歷</a></li>
+        <li><a href="experience.html" class="nav-link active">就學經歷</a></li>
         <li><a href="#portfolio" class="nav-link">作品集</a></li>
         <li><a href="#contact" class="nav-link">告訴我</a></li>
         <span class="nav-underline"></span>
       </ul>
-
     </nav>
-
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Hi ~ 我是 胡芊杏</h2>
-      <p>歡迎來到我的個人網站！點擊下方資訊了解我 ~</p>
-    </section>
-
-    <section id="quick-links" class="quick-links">
-      <a href="about.html" class="card">
-        <h3>關於我</h3>
-        <p>About me !</p>
-      </a>
-      <a href="experience.html" class="card">
-        <h3>就學經歷</h3>
-        <p>My Schooling Experience</p>
-      </a>
-      <a href="#portfolio" class="card">
-        <h3>作品集</h3>
-        <p>My Portfolio</p>
-      </a>
+    <section class="experience-section">
+      <h2>My Schooling Experience</h2>
+      <ul>
+        <li>公立太平國小畢業</li>
+        <li>公立明義國中畢業</li>
+        <li>就讀私立南台科技大學</li>
+      </ul>
     </section>
   </main>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const navLinks = document.querySelectorAll(".nav-links .nav-link");
@@ -75,6 +58,5 @@
       if (currentActive) moveUnderline(currentActive);
     });
 </script>
-
 </body>
 </html>

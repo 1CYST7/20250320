@@ -26,10 +26,17 @@ nav {
   padding: 0 1rem;
 }
 
-nav h1 {
+/* h1 包在 <a> 裡時樣式保持一致 */
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a h1 {
   font-family: 'Baskerville', serif;
   font-size: 2rem;
   margin: 0;
+  color: #2a2a2a;
 }
 
 /* 導覽連結區 */
@@ -71,6 +78,7 @@ nav h1 {
   background-color: #d48aa0;
   transition: all 0.3s ease;
 }
+
 
 
   /* Hero 區塊 */

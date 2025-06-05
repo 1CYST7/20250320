@@ -1,11 +1,10 @@
+/* 全局字體 */
 body {
   font-family: 'Noto Sans TC', 'Inter', sans-serif;
   margin: 0;
   background-color: #fffafa;
   color: #2a2a2a;
 }
-
-
 
 /* 導覽列區塊 */
 header {
@@ -76,11 +75,8 @@ nav a h1 {
   transition: all 0.3s ease;
 }
 
-
-
-
-/* About 區塊 */
-.about-section {
+/* 就學經歷專屬區塊 */
+.experience-section {
   max-width: 1200px;
   margin: 2rem auto 0 10rem; /* 上方 2rem 空間，左側 2rem 靠左 */
   padding: 2.0rem;
@@ -89,31 +85,19 @@ nav a h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.about-section h2 {
+.experience-section h2 {
   font-size: 2rem;
-  color: #c39dac;
-  margin-bottom: 1rem;
+  color: #d48aa0;
+  margin-bottom: 1.5rem;
 }
 
-.about-section p {
+.experience-section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.experience-section ul li {
+  margin-bottom: 0.75rem;
   font-size: 1.1rem;
   color: #444;
-  margin-bottom: 1.2rem;
-  line-height: 1.6;
-}
-
-.about-section ul {
-  padding-left: 1.2rem;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #555;
-}
-
-.about-section a {
-  color: #d48aa0;
-  text-decoration: none;
-}
-
-.about-section a:hover {
-  text-decoration: underline;
 }
