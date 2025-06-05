@@ -10,64 +10,75 @@ body {
     color: #2a2a2a;
   }
   
-  /* 導覽列 */
-  header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #eee;
-    padding: 1.2rem 0;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  nav h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #222;
-    font-weight: 700;
-    margin: 0;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li a {
-    font-family: 'Inter', sans-serif;
-    color: #555;
-    text-decoration: none;
-    font-weight: 500;
-    padding-bottom: 4px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #d48aa0;
-  }
-  
-  nav ul li a.active {
-    border-bottom: 2px solid #d48aa0;
-    color: #333;
-  }
-  
+/* 導覽列區塊 */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 1.2rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+nav h1 {
+  font-family: 'Baskerville', serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* 導覽連結區 */
+.nav-links {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* 滑鼠滑過效果 */
+.nav-links li a:hover {
+  color: #d48aa0;
+}
+
+/* 頁面 active 狀態 */
+.nav-links li a.active {
+  color: #333;
+}
+
+/* 滑動底線 */
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #d48aa0;
+  transition: all 0.3s ease;
+}
+
+
   /* Hero 區塊 */
   .hero {
     text-align: center;
     padding: 5rem 1rem 4rem;
-    background-color: #f9f9fb;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    background-color:#f1eaea;
+    
   }
   
   .hero h2 {
@@ -118,29 +129,54 @@ body {
   }
   
   .card {
-    flex: 1 1 150px;       /* 變大一些 */
-    background-color: #f9f9fb;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    padding: 3.5rem 1rem;  /* 上下加大間距 */
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #d48aa0;
-    text-decoration: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  flex: 1 1 100px;
+  background-color: #f9f9fb;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  color: #c9b2b9;
+  margin: 0;
+}
+
+.card p {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color:#eeecec;
+}  
+/* 進場動畫效果 */
+.quick-links {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeSlideUp 0.5s ease-out forwards;
+  animation-delay: 0.15s;
+}
+
+/* 定義動畫 */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    color: #e49bb6;
-  }
-  
-  
+} 

@@ -1,0 +1,111 @@
+body {
+  font-family: 'Noto Sans TC', 'Inter', sans-serif;
+  margin: 0;
+  background-color: #fffafa;
+  color: #2a2a2a;
+}
+
+
+
+/* 導覽列區塊 */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 1.2rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+nav h1 {
+  font-family: 'Baskerville', serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* 導覽連結區 */
+.nav-links {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* 滑鼠滑過效果 */
+.nav-links li a:hover {
+  color: #d48aa0;
+}
+
+/* 頁面 active 狀態 */
+.nav-links li a.active {
+  color: #333;
+}
+
+/* 滑動底線 */
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #d48aa0;
+  transition: all 0.3s ease;
+}
+
+
+
+/* About 區塊 */
+.about-section {
+  max-width: 1200px;
+  margin: 2rem auto 0 10rem; /* 上方 2rem 空間，左側 2rem 靠左 */
+  padding: 2.0rem;
+  background-color: #f9f7f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #c39dac;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.about-section ul {
+  padding-left: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.about-section a {
+  color: #d48aa0;
+  text-decoration: none;
+}
+
+.about-section a:hover {
+  text-decoration: underline;
+}
