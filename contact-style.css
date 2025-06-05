@@ -1,0 +1,147 @@
+/* 導覽列區塊 */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 1.2rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* h1 包在 <a> 裡時樣式保持一致 */
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a h1 {
+  font-family: 'Baskerville', serif;
+  font-size: 2rem;
+  margin: 0;
+  color: #2a2a2a;
+}
+
+/* 導覽連結區 */
+.nav-links {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* 滑鼠滑過效果 */
+.nav-links li a:hover {
+  color: #d48aa0;
+}
+
+/* 頁面 active 狀態 */
+.nav-links li a.active {
+  color: #333;
+}
+
+/* 滑動底線 */
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #d48aa0;
+  transition: all 0.3s ease;
+}
+body {
+  font-family: 'Noto Sans TC', 'Inter', sans-serif;
+  background-color: #fdfcfd;
+  margin: 0;
+  color: #2a2a2a;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  background-color: #f7f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  padding-right: 2rem; /* 留右邊空間 */
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  color: #d48aa0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #444;
+}
+
+input, textarea {
+  width: 95%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button.btn {
+  margin: 1.5rem auto 0;
+  background-color: #f2d3dc;
+  border: none;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  display: block; /* 確保是區塊元素才能自動置中 */
+}
+
+button.btn:hover {
+  background-color: #f7e2e9;
+  transform: scale(1.03);
+}
+
+/* 通知提示 */
+#notification {
+  margin-top: 2rem;
+  background-color: #e0f6e9;
+  color: #2a6f4f;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
