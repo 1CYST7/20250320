@@ -3,73 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>自我介紹</title>
-  
-  <style>
-    h2 {
-      color: #7a7a7a; 
-    }
-    a {
-      border: 2px solid #d6c2b9; /* 綠色邊框，2px寬 */
-      border-radius: 8px; /* 圓角邊框 */
-      padding: 10px 20px; /* 內邊距讓內容不貼邊 */
-      display: inline-block; /* 讓連結更像按鈕 */
-      text-decoration: none; /* 移除底線 */
-      color: #000000; 
-      transition: all 0.3s ease; /* 添加過渡效果 */
-    }
-    a:hover {
-      background-color: #a5969b; 
-      color: white; 
-    }
-  </style>
-
+  <title>我的自我介紹</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index-style.css" />
 </head>
 <body>
   <header>
-    <h1>歡迎來到我的自我介紹網站</h1>
-    <hr>
+    <nav>
+      <h1>Self introduction</h1>
+      <ul>
+        <li><a href="#" class="active">首頁</a></li>
+        <li><a href="#">關於我</a></li>
+        <li><a href="#">作品集</a></li>
+        <li><a href="#">聯絡我</a></li>
+      </ul>
+    </nav>
   </header>
-  <a href="index.html">首頁</a>
-  <a href="about.html">關於我</a>
-  <a href="research.html">研究</a>
-  <a href="hw_1.html">N*N 乘法表</a>
-  <a href="hw_2.html">Water Puzzle Game</a>
-  <a href="https://1cyst7.github.io/2025-react-app/" target="_blank">MY Slider</a>
-  <section id="about">
-    <h2>關於我</h2>
-    <p>你好！我是胡芊杏，就讀於南臺科技大學資工系。</p>
-  </section>
 
-  <section id="skills">
-    <h2>學過的程式語言</h2>
-    <ul>
-      <li>HTML / CSS / JavaScript</li>
-      <li>Arduino 開發</li>
-      <li>物聯網應用</li>
-      <li>嵌入式系統設計</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>有甚麼意見啦</h2>
-    <form id="contact-form">
+  <main>
+    <section class="hero">
+      <h2>Hi ~ 我是 胡芊杏</h2>
+      <p>ChatGPT 是我的好朋友！</p>
       
+    </section>
 
-      <label for="message">訊息：</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">送出</button>
-    </form>
-  </section>
-
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      const message = document.getElementById('message').value;
-      alert(`謝謝你的訊息！我還是不會改^^\n訊息: ${message}`);
-    });
-  </script>
+    <section class="quick-links">
+      <a href="#" class="card">關於我</a>
+      <a href="#" class="card">作品集</a>
+      <a href="#" class="card">經歷</a>
+    </section>
+    
+  </main>
 </body>
 </html>
