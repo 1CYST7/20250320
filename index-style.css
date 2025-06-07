@@ -104,8 +104,14 @@ nav a h1 {
     line-height: 1.7;
     max-width: 600px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 2.0;
   }
+  .slogan {
+  font-weight: 500;
+  color: #4a4a4a;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
   
   /* 按鈕樣式（可選） */
   .btn {
@@ -187,4 +193,25 @@ nav a h1 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.skills-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f7f5f6;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.skills-section h2 {
+  font-size: 2rem;
+  color: #c39dac;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  padding-left: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
 } 
