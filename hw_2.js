@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (levelCount === 10) {
         alert("恭喜!你已經完成所有挑戰!!");
       } else {
-        alert("你已經完成本關卡!");
+        alert("你已經完成本關卡!將前往下一關卡繼續挑戰!");
         levelCount++;
         document.getElementById("level-count").textContent = levelCount;
         document.getElementById("completed-tubes-count").textContent = 0;
