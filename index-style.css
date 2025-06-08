@@ -342,58 +342,83 @@ nav a h1 {
   transform: scale(1.05);
 }
 
-
-/* 整個聯絡區塊全寬 + 黑底 */
-#contact {
-  background-color: #000;
-  color: #f5f5f5;
-  padding: 4rem 2rem;
+.contact-container {
+  background-color: #1c1c1c;
+  width: 100%;
+}
+/* Contact 區塊外觀背景 */
+.contact-section {
+  background-color:  #1c1c1c; /* ✅ 整個中間底色 */
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* 表單外框容器設計 */
-.contact-container {
-  max-width: 700px;
+/* 左右兩欄佈局 */
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color:  #1c1c1c; /* ✅ 整個中間底色 */
+  color: #ffffff;             /* ✅ 白字 */
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 2.5rem;
-  background-color: #1a1a1a;
+}
+
+/* 左側說明欄 */
+.contact-info {
+  flex: 1 1 300px;
+  
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #cccccc;
+}
+
+/* 右側表單欄 */
+.contact-form {
+  flex: 1 1 500px;
+
+  padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
-.contact-container h2 {
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-/* 表單樣式 */
-form label {
+.contact-form label {
   display: block;
   margin-top: 1rem;
   font-weight: 600;
   color: #dddddd;
 }
 
-input, textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 0.8rem;
   margin-top: 0.5rem;
   border: 1px solid #444;
   border-radius: 8px;
-  font-family: inherit;
-  font-size: 1rem;
   background-color: #2a2a2a;
   color: #f5f5f5;
+  font-size: 1rem;
 }
 
-input::placeholder, textarea::placeholder {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
   color: #aaa;
 }
 
-/* 按鈕風格 */
-button.btn {
-  margin: 2rem auto 0;
+/* 按鈕 */
+.contact-form .btn {
+  margin-top: 1.5rem;
   background-color: #ffffff;
   color: #1a1a1a;
   padding: 0.75rem 1.5rem;
@@ -402,18 +427,17 @@ button.btn {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  display: block;
 }
 
-button.btn:hover {
+.contact-form .btn:hover {
   background-color: #333333;
   color: #ffffff;
   transform: scale(1.05);
 }
 
-/* 成功提示訊息 */
+/* 成功訊息 */
 #notification {
-  margin-top: 2rem;
+  margin-top: 1rem;
   background-color: #1e3f2f;
   color: #aef9c7;
   padding: 1rem;
@@ -425,6 +449,18 @@ button.btn:hover {
 
 .hidden {
   display: none;
+}
+
+/* 響應式排版 */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
 }
 
 
@@ -456,7 +492,7 @@ button.btn:hover {
   padding: 4rem 2rem;
 }
 
-#contact { background-color: #f8f9fa; }
+#contact { background-color: #1c1c1c; }
 
 html {
   scroll-behavior: smooth;
