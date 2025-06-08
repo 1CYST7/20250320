@@ -79,27 +79,47 @@
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio-container section">
-      <h2>我的作品集</h2>
-      <div class="project-grid">
-        <div class="project-card" style="background-image:url('img/hw_1.png');"><div class="card-title">九九乘法表</div><div class="overlay"><a href="hw_1.html" class="try-button" target="_blank">進去試玩</a></div></div>
-        <div class="project-card" style="background-image:url('img/hw_2.png');"><div class="card-title">Water Puzzle</div><div class="overlay"><a href="hw_2.html" class="try-button" target="_blank">進去試玩</a></div></div>
-        <div class="project-card" style="background-image:url('img/hw_3.png');"><div class="card-title">React App</div><div class="overlay"><a href="https://1cyst7.github.io/2025-react-app/" class="try-button" target="_blank" rel="noopener noreferrer">進去試玩</a></div></div>
+<section id="portfolio" class="portfolio-container">
+  <h2>portfolio</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="card-img" style="background-image:url('img/hw_1.png');"></div>
+      <div class="card-info">
+        <h3>九九乘法表</h3>
+        <a href="hw_1.html" target="_blank" class="try-button">進去試玩</a>
       </div>
-    </section>
+    </div>
+    <div class="project-card">
+      <div class="card-img" style="background-image:url('img/hw_2.png');"></div>
+      <div class="card-info">
+        <h3>Water Puzzle</h3>
+        <a href="hw_2.html" target="_blank" class="try-button">進去試玩</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="card-img" style="background-image:url('img/hw_3.png');"></div>
+      <div class="card-info">
+        <h3>React App</h3>
+        <a href="https://1cyst7.github.io/2025-react-app/" target="_blank" rel="noopener noreferrer" class="try-button">進去試玩</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact-container section">
-      <h2>有什麼想法！</h2>
-      <form id="contactForm">
-        <label for="name">你的名字</label>
-        <input type="text" id="name" name="name" required />
-        <label for="message">留言內容</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <button type="submit" class="btn">送出留言</button>
-      </form>
-      <div id="notification" class="hidden">🎉 我已經收到你的訊息囉！</div>
-    </section>
+
+    <!-- Contact 區塊 -->
+<section id="contact" class="dark-section">
+  <div class="contact-container">
+    <h2>有什麼想法！</h2>
+    <form id="contactForm">
+      <label for="name">你的名字</label>
+      <input type="text" id="name" name="name" placeholder="請輸入名字" required />
+      <label for="message">留言內容</label>
+      <textarea id="message" name="message" rows="5" placeholder="輸入留言內容…" required></textarea>
+      <button type="submit" class="btn-dark">送出留言</button>
+    </form>
+    <div id="notification" class="hidden">🎉 我已經收到你的訊息囉！</div>
+  </div>
   </main>
 
   <!-- ===== JavaScript ===== -->
