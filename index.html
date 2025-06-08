@@ -3,78 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的自我介紹</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <title>個人網站</title>
   <link rel="stylesheet" href="index-style.css" />
-  
-
 </head>
 <body>
-  
+  <!-- ===== Header / Nav ===== -->
   <header>
     <nav>
-    <a href="index.html">
-      <h1>Self Introduction</h1>
-    </a>    
+      <a href="#home"><h1>Self Introduction</h1></a>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link active">首頁</a></li>
-        <li><a href="about.html" class="nav-link">關於我</a></li>
-        <li><a href="skills.html" class="nav-link">技能</a></li>
-        <li><a href="portfolio.html" class="nav-link">作品集</a></li>
-        <li><a href="contact.html" class="nav-link">告訴我</a></li>
+        <li><a href="#home" class="nav-link active">首頁</a></li>
+        <li><a href="#about" class="nav-link">關於我</a></li>
+        <li><a href="#skills" class="nav-link">技能</a></li>
+        <li><a href="#portfolio" class="nav-link">作品集</a></li>
+        <li><a href="#contact" class="nav-link">告訴我</a></li>
         <span class="nav-underline"></span>
       </ul>
-
     </nav>
-
   </header>
 
+  <!-- ===== Main ===== -->
   <main>
-    <section class="hero">
-      <h2>Hi ~ 我是 胡芊杏</h2>
-      <p class="slogan">資工系學生｜熱愛程式與設計｜持續學習與實作中</p>
-      <p>歡迎來到我的個人網站！以下將介紹我的背景、學習經歷與作品成果。</p>
+    <!-- Hero / Home -->
+    <section id="home" class="hero">
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h2>Hi，我是胡芊杏</h2>
+        <p class="slogan">資工系學生 ｜ 熱愛程式與設計 ｜ 持續學習與實作中</p>
+        <a href="#about" class="hero-btn">了解更多</a>
+      </div>
     </section>
 
-    <section id="quick-links" class="quick-links">
-      <a href="about.html" class="card">
-        <h3>關於我</h3>
-        <p>About me !</p>
-      </a>
-      <a href="skills.html" class="card">
-          <h3>技能</h3>
-          <p>My Skills</p>
-      </a>
-      <a href="portfolio.html" class="card">
-        <h3>作品集</h3>
-        <p>My Portfolio</p>
-      </a>
+    <!-- About -->
+    <section id="about" class="about-section section">
+      <h2>關於我 About Me</h2>
+      <p>您好，我是 <strong>胡芊杏</strong>，目前就讀於南臺科技大學資訊工程系。自入學以來，我陸續學習了 HTML、CSS、Java、C、Python 等語言。</p>
+      <p>我將所學實際應用於作品中，包含製作靜態網站、簡易互動系統與資料處理程式。目前正持續探索前端框架、AI 工具與個人品牌經營，希望能將技術與創意融合，打造出實用又美觀的數位產品。</p>
+      <h3>基本資訊</h3>
+      <ul>
+        <li>🎓 就讀科系：南臺科技大學 資訊工程系</li>
+        <li>📧 聯絡信箱：<a href="mailto:5b1g0020@stust.edu.tw">5b1g0020@stust.edu.tw</a></li>
+        <li>🎯 興趣方向：網頁設計、互動式應用、AI 工具活用</li>
+        <li>📌 目前進行：個人網站設計與作品集整理</li>
+      </ul>
+      <h3>就學經歷</h3>
+      <ul>
+        <li>太平國小畢業</li>
+        <li>明義國中畢業</li>
+        <li>正就讀南臺科技大學</li>
+      </ul>
+      <h3>個人目標</h3>
+      <p>希望能在未來的學習與工作中，持續提升自己的技術能力，並將所學應用於實際專案中，創造出有價值的數位產品。</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skill-bars section">
+      <h2>Skills &amp; Tools</h2>
+      <div class="bar-item"><div class="bar-label">HTML</div><div class="bar-bg"><div class="bar-fill" style="width:80%"></div></div></div>
+      <div class="bar-item"><div class="bar-label">CSS</div><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div></div>
+      <div class="bar-item"><div class="bar-label">JavaScript</div><div class="bar-bg"><div class="bar-fill" style="width:60%"></div></div></div>
+      <div class="bar-item"><div class="bar-label">Python</div><div class="bar-bg"><div class="bar-fill" style="width:75%"></div></div></div>
+      <div class="bar-item"><div class="bar-label">GitHub</div><div class="bar-bg"><div class="bar-fill" style="width:75%"></div></div></div>
+      <div class="bar-item"><div class="bar-label">React</div><div class="bar-bg"><div class="bar-fill" style="width:40%"></div></div></div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio-container section">
+      <h2>我的作品集</h2>
+      <div class="project-grid">
+        <div class="project-card" style="background-image:url('img/hw_1.png');"><div class="card-title">九九乘法表</div><div class="overlay"><a href="hw_1.html" class="try-button" target="_blank">進去試玩</a></div></div>
+        <div class="project-card" style="background-image:url('img/hw_2.png');"><div class="card-title">Water Puzzle</div><div class="overlay"><a href="hw_2.html" class="try-button" target="_blank">進去試玩</a></div></div>
+        <div class="project-card" style="background-image:url('img/hw_3.png');"><div class="card-title">React App</div><div class="overlay"><a href="https://1cyst7.github.io/2025-react-app/" class="try-button" target="_blank" rel="noopener noreferrer">進去試玩</a></div></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-container section">
+      <h2>有什麼想法！</h2>
+      <form id="contactForm">
+        <label for="name">你的名字</label>
+        <input type="text" id="name" name="name" required />
+        <label for="message">留言內容</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit" class="btn">送出留言</button>
+      </form>
+      <div id="notification" class="hidden">🎉 我已經收到你的訊息囉！</div>
     </section>
   </main>
+
+  <!-- ===== JavaScript ===== -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const navLinks = document.querySelectorAll(".nav-links .nav-link");
-      const underline = document.querySelector(".nav-underline");
-      let currentActive = document.querySelector(".nav-link.active");
+  document.addEventListener('DOMContentLoaded', () => {
+    /* ---------- Nav underline + hover ---------- */
+    const links      = document.querySelectorAll('.nav-link');
+    const underline  = document.querySelector('.nav-underline');
 
-      function moveUnderline(el) {
-        const linkRect = el.getBoundingClientRect();
-        const navRect = el.closest(".nav-links").getBoundingClientRect();
-        underline.style.width = linkRect.width + "px";
-        underline.style.left = linkRect.left - navRect.left + "px";
-      }
+    function moveUnderline(el){
+      const rect   = el.getBoundingClientRect();
+      const parent = el.closest('.nav-links').getBoundingClientRect();
+      underline.style.width = rect.width + 'px';
+      underline.style.left  = rect.left  - parent.left + 'px';
+    }
 
-      // 滑過去時移動
-      navLinks.forEach(link => {
-        link.addEventListener("mouseenter", () => moveUnderline(link));
-        link.addEventListener("mouseleave", () => {
-          if (currentActive) moveUnderline(currentActive);
-        });
+    links.forEach(l=>{
+      l.addEventListener('mouseenter',()=> moveUnderline(l));
+      l.addEventListener('mouseleave',()=> {
+        const active = document.querySelector('.nav-link.active');
+        if (active) moveUnderline(active);
       });
-
-      // 初始定位在 active 的地方
-      if (currentActive) moveUnderline(currentActive);
+      l.addEventListener('click',()=> {
+        links.forEach(a=>a.classList.remove('active'));
+        l.classList.add('active');
+        moveUnderline(l);
+      });
     });
+
+    // 預設把 underline 放在第一個連結
+    if (links.length){
+      links[0].classList.add('active');
+      moveUnderline(links[0]);
+    }
+
+    /* ---------- 自動偵測目前區塊並高亮 ---------- */
+    const sections = document.querySelectorAll('section[id]');
+    const sectionObserver = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const id = entry.target.getAttribute('id');
+          const targetLink = document.querySelector(`.nav-link[href="#${id}"]`);
+          if (targetLink){
+            links.forEach(a=>a.classList.remove('active'));
+            targetLink.classList.add('active');
+            moveUnderline(targetLink);
+          }
+        }
+      });
+    },{
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6   // 區塊可見 60% 時觸發
+    });
+
+    sections.forEach(sec=> sectionObserver.observe(sec));
+
+    /* ---------- Skill bars animation ---------- */
+    const fills = document.querySelectorAll('.bar-fill');
+    fills.forEach(f=>{
+      const w = f.style.width;
+      f.style.setProperty('--target-width', w);
+      f.style.width = '0';
+    });
+
+    const skillsSection = document.getElementById('skills');
+    const skillObserver = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          fills.forEach(f=> f.style.width = f.style.getPropertyValue('--target-width'));
+          skillObserver.disconnect(); // 只執行一次
+        }
+      });
+    },{ threshold: 0.3 });
+    if (skillsSection) skillObserver.observe(skillsSection);
+
+    /* ---------- Contact form toast ---------- */
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('notification');
+    if (form){
+      form.addEventListener('submit', e=>{
+        e.preventDefault();
+        note.classList.remove('hidden');
+        form.reset();
+        setTimeout(()=> note.classList.add('hidden'), 3000);
+      });
+    }
+  });
 </script>
 
 </body>
