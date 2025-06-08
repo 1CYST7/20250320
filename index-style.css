@@ -472,10 +472,7 @@ nav a h1 {
   background-color: #000;
   color: #f5f5f5;
   padding: 4rem 2rem;
-  scroll-margin-top: 100px; /* 或你導覽列的實際高度 */
-}
-#about, #skills, #contact {
-  scroll-margin-top: 100px; /* 同理，也可為其他區塊一起設 */
+  
 }
 
 #contact { background-color: #1c1c1c; }
