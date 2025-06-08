@@ -8,7 +8,7 @@ body {
   margin: 0;
   background-color: #fdfcfd;
   color: #2a2a2a;
-  padding-top: 100px; /* 新增這一行，避開 header */
+  
 }
   
 header {
@@ -87,7 +87,8 @@ nav a h1 {
 
 
 
-  .hero {
+
+.hero {
   height: 100vh;
   background: url('img/hero-bg.jpg') center/cover fixed;
   position: relative;
@@ -123,46 +124,88 @@ nav a h1 {
   background: #fff;
 }
 
-/* About 區塊 */
-.about-section {
+.about-full-bg {
+  background-image: url('img/about-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   position: relative;
-  max-width: 1200px;
-  margin: 2rem auto 0 10rem;
-  padding: 2.0rem;
-  background-color: rgba(180,180,180,0.8); /* 半透明灰色，能看到背景 */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start; /* 這裡由 center 改為 flex-start */
+  
 }
 
-.about-section h2 {
-  font-size: 2rem;
-  color: #333232;
-  margin-bottom: 1rem;
+.about-overlay {
+  background-color: rgba(255, 255, 255, 0.9); /* 白色半透明 */
+  background-attachment: fixed; /* 跟首頁一樣視差效果 */
+  width: 50%;
+  height: auto;
+  padding: 40px;
+  overflow-y: auto;
 }
 
-.about-section p {
-  font-size: 1.1rem;
-  color: #ffffff;
-  margin-bottom: 1.2rem;
-  line-height: 1.6;
+.about-textbox {
+  color: #333;
+  max-width: 90%;
 }
 
-.about-section ul {
-  padding-left: 1.2rem;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #ffffff;
+.about-textbox h2,
+.about-textbox h3 {
+  color: #222;
+  margin-bottom: 10px;
 }
 
-.about-section a {
-  color: #494647;
+.about-textbox ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-textbox ul li {
+  margin-bottom: 6px;
+}
+
+.about-textbox a {
+  color: #007bff;
   text-decoration: none;
 }
-
-.about-section a:hover {
+.about-textbox a:hover {
   text-decoration: underline;
 }
+
 /* Skill Bars Section */
+/* 技能區塊背景和 about 一樣 */
+#skills {
+  background-image: url('img/about-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start; /* 這裡由 center 改為 flex-start */
+  
+}
+
+
+.skills-overlay {
+  
+  background-color: rgba(255, 255, 255, 0.9); /* 白色半透明 */
+  background-attachment: fixed; /* 跟首頁一樣視差效果 */
+  width: 50%;
+  height: auto;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* RWD：小螢幕自動縮小 */
+@media (max-width: 900px) {
+  .skills-overlay {
+    width: 90%;
+    margin: 0 auto 3vh auto;
+    padding: 24px;
+  }
+}
 .skill-bars {
   position: relative;
   max-width: 800px;
@@ -377,14 +420,26 @@ button.btn:hover {
   display: none;
 }
 
-.section {
-  padding: 120px 20px 80px; /* 上面預留更多空間 */
+#about {
+  background-image: url('img/about-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 跟首頁一樣視差效果 */
 }
-#about { background-color: #8d8d8d; }
-#skills { background-color: #ffffff; }
+
+#skills {
+  background-image: url('img/about-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 跟首頁一樣視差效果 */
+  scroll-margin-top: 100px;
+}
 #portfolio { background-color: #f0f8ff; }
 #contact { background-color: #f8f9fa; }
 
 html {
   scroll-behavior: smooth;
 }
+
