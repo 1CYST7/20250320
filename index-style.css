@@ -124,57 +124,37 @@ nav a h1 {
   background: #fff;
 }
 
-.about-full-bg {
-  background-image: url('img/about-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  justify-content: flex-end;
+/* 背景整幅滿版 */
+.about-full-bg{
+  background:url('img/about-image.jpg') center/cover fixed;
+  min-height:100vh;
+  position:relative;          /* ⭐ 讓子元素可以用 absolute 參照這個區塊 */
 }
 
-.about-overlay {
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 50%;
-  display: flex;
-  align-items: stretch; /* 撐滿整高 */
+/* 右側白色框：絕對定位貼底、貼右 */
+.about-overlay{
+  position:absolute;          /* ⭐ 關鍵：改成 absolute */
+  bottom:0;                   /* 貼齊底端 */
+  right:0;                    /* 貼齊右邊 */
+  width:50%;                  /* 想要 50% 寬度，可自行調整 */
+  height:100%;                /* 與背景同高，必要時可改 auto */
+  background:rgba(255,255,255,.9);
+  overflow-y:auto;            /* 內容超出可捲動 */
 }
 
-.about-textbox {
-  padding: 40px;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  overflow-y: auto;
+/* 內層文字排版 */
+.about-textbox{
+  padding:40px;
+  color:#333;
 }
 
-/* 文字樣式維持你的設定 */
 .about-textbox h2,
-.about-textbox h3 {
-  color: #222;
-  margin-bottom: 10px;
-}
+.about-textbox h3{margin-bottom:10px;color:#222}
 
-.about-textbox ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.about-textbox ul li {
-  margin-bottom: 6px;
-}
-
-.about-textbox a {
-  color: #007bff;
-  text-decoration: none;
-}
-.about-textbox a:hover {
-  text-decoration: underline;
-}
+.about-textbox ul{padding-left:20px;margin-bottom:20px}
+.about-textbox li{margin-bottom:6px}
+.about-textbox a{color:#007bff;text-decoration:none}
+.about-textbox a:hover{text-decoration:underline}
 /* Skill Bars Section */
 
 
