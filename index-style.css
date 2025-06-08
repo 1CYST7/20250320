@@ -132,18 +132,18 @@ nav a h1 {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end; /* 改為底部對齊 */
+  align-items: stretch; /* 原本是 flex-start，改成 stretch 讓子元素高度撐滿 */
 }
 
 .about-overlay {
   background-color: rgba(255, 255, 255, 0.9);
-  /* background-attachment: fixed;  // 建議移除，避免 overlay 跟隨螢幕滾動 */
+  background-attachment: fixed;
   width: 50%;
-  height: auto;
-  max-height: 100vh; /* 最高不要超過視窗高度 */
+  height: 100%; /* 🔥 這裡改成 100%！讓它填滿整個 about-full-bg */
   padding: 40px;
   overflow-y: auto;
 }
+
 .about-textbox {
   color: #333;
   max-width: 90%;
