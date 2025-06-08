@@ -128,27 +128,31 @@ nav a h1 {
   background-image: url('img/about-image.jpg');
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   justify-content: flex-end;
-  align-items: stretch; /* 原本是 flex-start，改成 stretch 讓子元素高度撐滿 */
 }
 
 .about-overlay {
   background-color: rgba(255, 255, 255, 0.9);
-  background-attachment: fixed;
   width: 50%;
-  height: 100%; /* 🔥 這裡改成 100%！讓它填滿整個 about-full-bg */
-  padding: 40px;
-  overflow-y: auto;
+  display: flex;
+  align-items: stretch; /* 撐滿整高 */
 }
 
 .about-textbox {
+  padding: 40px;
   color: #333;
-  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow-y: auto;
 }
 
+/* 文字樣式維持你的設定 */
 .about-textbox h2,
 .about-textbox h3 {
   color: #222;
@@ -171,7 +175,6 @@ nav a h1 {
 .about-textbox a:hover {
   text-decoration: underline;
 }
-
 /* Skill Bars Section */
 
 
