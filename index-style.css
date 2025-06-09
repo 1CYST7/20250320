@@ -249,14 +249,13 @@ nav a h1 {
 }
 /* ---------- Portfolio 區塊外層 ---------- */
 #portfolio {
-  background-color: #000;
+  background-color: rgb(83, 83, 83);
   color: #f5f5f5;
   padding: 4rem 0; /* 上下 4rem，左右靠內層 container 控制 */
 }
 
 /* ---------- 內層 container：左右保留空間 ---------- */
 .portfolio-container {
- 
   width: auto;
   padding: 0 10rem;  /* 左右邊距變大，讓區塊內容更集中 */
 }
@@ -279,7 +278,7 @@ nav a h1 {
 
 /* ---------- 卡片樣式 ---------- */
 .project-card {
-  background-color: #1c1c1c;
+  background-color: #383737;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
@@ -333,7 +332,7 @@ nav a h1 {
 }
 
 .try-button:hover {
-  background-color: #333333;
+  background-color:#1a1a1a;
   color: #ffffff;
   transform: scale(1.05);
 }
@@ -349,7 +348,7 @@ nav a h1 {
 .contact-container,
 .contact-section,
 .contact-wrapper {
-  background-color: #1c1c1c;
+  background-color: #383737;
   width: 100%;
   color: #ffffff;
 }
@@ -405,7 +404,7 @@ nav a h1 {
   padding: 2rem 2.5rem;         /* 這裡加寬 padding 讓欄位更內縮 */
   margin-left: 2rem;           /* 留右側空間避免貼邊 */
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
 }
 
