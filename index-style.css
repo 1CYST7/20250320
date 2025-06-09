@@ -148,8 +148,23 @@ nav a h1 {
   color:#333;
 }
 
-.about-textbox h2,
-.about-textbox h3{margin-bottom:10px;color:#222}
+.about-textbox h2 {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.about-textbox h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  margin: 1.4rem 0 0.6rem;
+  font-weight: 600;
+  color: #333;
+}
 
 .about-textbox ul{padding-left:20px;margin-bottom:20px}
 .about-textbox li{margin-bottom:6px}
@@ -231,24 +246,20 @@ nav a h1 {
     width: var(--target-width);
   }
 }
-.portfolio-container {
-  width: 100%;
-  padding: 0 2rem;
-}
-
-/* 整個區塊黑色背景，含左右內距 */
+/* ---------- Portfolio 區塊外層 ---------- */
 #portfolio {
   background-color: #000;
   color: #f5f5f5;
-  padding: 4rem 4rem;
+  padding: 4rem 0; /* 上下 4rem，左右靠內層 container 控制 */
 }
 
-/* 讓 container 寬度撐滿，控制左右邊界用 padding */
+/* ---------- 內層 container：左右保留空間 ---------- */
 .portfolio-container {
   width: auto;
-  padding: 0 2rem;
+  padding: 0 10rem;  /* 左右邊距變大，讓區塊內容更集中 */
 }
 
+/* ---------- 標題 ---------- */
 .portfolio-container h2 {
   font-size: 2rem;
   color: #ffffff;
@@ -256,16 +267,14 @@ nav a h1 {
   margin-bottom: 2.5rem;
 }
 
-/* 保持卡片排版樣式 */
+/* ---------- 卡片排版 ---------- */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-/* 以下 project-card 設計保持不變 */
-
-
+/* ---------- 卡片樣式 ---------- */
 .project-card {
   background-color: #1c1c1c;
   border-radius: 14px;
@@ -274,17 +283,18 @@ nav a h1 {
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 400px; /* 讓卡片變高 */
+  height: 400px;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
+/* ---------- 圖片區 ---------- */
 .card-img {
   background-size: cover;
   background-position: center;
-  height: 240px; /* 圖片變高一點 */
+  height: 240px;
   transition: transform 0.3s ease;
 }
 
@@ -292,6 +302,7 @@ nav a h1 {
   transform: scale(1.05);
 }
 
+/* ---------- 卡片文字與按鈕區 ---------- */
 .card-info {
   padding: 1.4rem;
   text-align: center;
@@ -307,7 +318,7 @@ nav a h1 {
   color: #f5f5f5;
 }
 
-/* 現代風格按鈕 */
+/* ---------- 現代風格按鈕 ---------- */
 .try-button {
   background-color: #ffffff;
   color: #1c1c1c;
@@ -323,39 +334,52 @@ nav a h1 {
   color: #ffffff;
   transform: scale(1.05);
 }
+@media (max-width: 768px) {
+  .portfolio-container {
+    padding: 0 2rem;
+  }
+}
 
-.contact-container {
+
+/* 整體聯絡區背景 */
+#contact,
+.contact-container,
+.contact-section,
+.contact-wrapper {
   background-color: #1c1c1c;
   width: 100%;
+  color: #ffffff;
 }
-/* Contact 區塊外觀背景 */
+
+/* 區塊間距與寬度限制 */
 .contact-section {
-  background-color:  #1c1c1c; /* ✅ 整個中間底色 */
   padding: 4rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 左右兩欄佈局 */
+/* 左右欄排版 */
 .contact-wrapper {
   display: flex;
   justify-content: space-between;
-  background-color:  #1c1c1c; /* ✅ 整個中間底色 */
-  color: #ffffff;             /* ✅ 白字 */
   padding: 4rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 左側說明欄 */
+/* 左側資訊欄 */
 .contact-info {
   flex: 1 1 300px;
-  
 }
 
-.contact-info h2 {
+.contact-info h2,h3 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #d6d6d6;
+}
+.contact-info h3 {
+  transform: translateX(3.0rem);
 }
 
 .contact-info p {
@@ -368,12 +392,15 @@ nav a h1 {
 /* 右側表單欄 */
 .contact-form {
   flex: 1 1 500px;
-
-  padding: 2rem;
+  background-color: #1a1a1a;
+  padding: 2rem 2.5rem;         /* 這裡加寬 padding 讓欄位更內縮 */
+  margin-left: 2rem;           /* 留右側空間避免貼邊 */
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
 }
 
+/* 表單標籤 */
 .contact-form label {
   display: block;
   margin-top: 1rem;
@@ -381,16 +408,20 @@ nav a h1 {
   color: #dddddd;
 }
 
+/* 表單欄位樣式 */
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 0.8rem;
+  width: 100%;           /* ✅ 固定寬度 */
+  max-width: 100%;        /* ✅ 防止手機超出，但不會撐大 */
+  padding: 0.8rem 1rem;
   margin-top: 0.5rem;
   border: 1px solid #444;
   border-radius: 8px;
   background-color: #2a2a2a;
   color: #f5f5f5;
   font-size: 1rem;
+  box-sizing: border-box;
+  resize: vertical;       /* ✅ 限制只能改高度 */
 }
 
 .contact-form input::placeholder,
@@ -398,7 +429,7 @@ nav a h1 {
   color: #aaa;
 }
 
-/* 按鈕 */
+/* 送出按鈕 */
 .contact-form .btn {
   margin-top: 1.5rem;
   background-color: #ffffff;
@@ -417,7 +448,7 @@ nav a h1 {
   transform: scale(1.05);
 }
 
-/* 成功訊息 */
+/* 成功訊息區塊 */
 #notification {
   margin-top: 1rem;
   background-color: #1e3f2f;
@@ -429,9 +460,43 @@ nav a h1 {
   border: 1px solid #aef9c7;
 }
 
+/* 隱藏用 */
 .hidden {
   display: none;
 }
+
+/*  --- 進場前的起始狀態 --- */
+.contact-info,
+.contact-form {
+  opacity: 0;
+  transform: translateX(0);          /* 保留原本，不讓畫面跳動 */
+}
+
+.contact-info.pre-slide {            /* 左側起始：從左邊 -100px */
+  transform: translateX(-100px);
+}
+
+.contact-form.pre-slide {            /* 右側起始：從右邊 100px */
+  transform: translateX(100px);
+}
+
+/*  --- 真正的滑入動畫（1.5s）--- */
+@keyframes slideInLeft {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.contact-info.slide-in {
+  animation: slideInLeft 1.5s ease-out forwards;
+}
+
+.contact-form.slide-in {
+  animation: slideInRight 1.5s ease-out forwards;
+}
+
 
 /* 響應式排版 */
 @media (max-width: 768px) {
@@ -467,15 +532,9 @@ nav a h1 {
   align-items: stretch; /* 或移除 align-items 設定 */
 }
 
-/* 讓 portfolio 區塊全寬無白邊 */
-#portfolio {
-  background-color: #000;
-  color: #f5f5f5;
-  padding: 4rem 2rem;
-  
-}
 
-#contact { background-color: #1c1c1c; }
+
+
 
 html {
   scroll-behavior: smooth;

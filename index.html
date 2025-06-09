@@ -79,32 +79,35 @@
     </section>
 
     <!-- Portfolio -->
-<section id="portfolio" class="portfolio-container">
-  <h2>portfolio</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <div class="card-img" style="background-image:url('img/hw_1.png');"></div>
-      <div class="card-info">
-        <h3>九九乘法表</h3>
-        <a href="hw_1.html" target="_blank" class="try-button">進去試玩</a>
+<section id="portfolio">
+  <div class="portfolio-container">
+    <h2>portfolio</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="card-img" style="background-image:url('img/hw_1.png');"></div>
+        <div class="card-info">
+          <h3>九九乘法表</h3>
+          <a href="hw_1.html" target="_blank" class="try-button">進去試玩</a>
+        </div>
       </div>
-    </div>
-    <div class="project-card">
-      <div class="card-img" style="background-image:url('img/hw_2.png');"></div>
-      <div class="card-info">
-        <h3>Water Puzzle</h3>
-        <a href="hw_2.html" target="_blank" class="try-button">進去試玩</a>
+      <div class="project-card">
+        <div class="card-img" style="background-image:url('img/hw_2.png');"></div>
+        <div class="card-info">
+          <h3>Water Puzzle</h3>
+          <a href="hw_2.html" target="_blank" class="try-button">進去試玩</a>
+        </div>
       </div>
-    </div>
-    <div class="project-card">
-      <div class="card-img" style="background-image:url('img/hw_3.png');"></div>
-      <div class="card-info">
-        <h3>React App</h3>
-        <a href="https://1cyst7.github.io/2025-react-app/" target="_blank" rel="noopener noreferrer" class="try-button">進去試玩</a>
+      <div class="project-card">
+        <div class="card-img" style="background-image:url('img/hw_3.png');"></div>
+        <div class="card-info">
+          <h3>React App</h3>
+          <a href="https://1cyst7.github.io/2025-react-app/" target="_blank" rel="noopener noreferrer" class="try-button">進去試玩</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
    <!-- Contact 區塊 -->
@@ -114,8 +117,8 @@
     <div class="contact-wrapper">
       <!-- 左邊：文字說明 -->
       <div class="contact-info">
-        <h2>聯絡我</h2>
-        <p>有想合作的項目、網站設計、排版製作、履歷架設⋯<br>歡迎填寫右側表單，我會盡快回覆你 😊</p>
+        <h2>Have any ideas ?</h2>
+        <h3>Please tell me  !</h3>
         <p>📬 Email：5b1g0020@stust.edu.tw</p>
         <p>📱 IG：_hcians_</p>
       </div>
@@ -146,12 +149,13 @@
   <!-- ===== JavaScript ===== -->
   <script>
   document.addEventListener('DOMContentLoaded', () => {
+
     /* ---------- Nav underline + hover ---------- */
-    const links      = document.querySelectorAll('.nav-link');
-    const underline  = document.querySelector('.nav-underline');
+    const links = document.querySelectorAll('.nav-link');
+    const underline = document.querySelector('.nav-underline');
 
     function moveUnderline(el){
-      const rect   = el.getBoundingClientRect();
+      const rect = el.getBoundingClientRect();
       const parent = el.closest('.nav-links').getBoundingClientRect();
       underline.style.width = rect.width + 'px';
       underline.style.left  = rect.left  - parent.left + 'px';
@@ -169,12 +173,7 @@
         moveUnderline(l);
       });
     });
-
-    // 預設把 underline 放在第一個連結
-    if (links.length){
-      links[0].classList.add('active');
-      moveUnderline(links[0]);
-    }
+    if (links.length){ links[0].classList.add('active'); moveUnderline(links[0]); }
 
     /* ---------- 自動偵測目前區塊並高亮 ---------- */
     const sections = document.querySelectorAll('section[id]');
@@ -182,20 +181,15 @@
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           const id = entry.target.getAttribute('id');
-          const targetLink = document.querySelector(`.nav-link[href="#${id}"]`);
-          if (targetLink){
+          const target = document.querySelector(`.nav-link[href="#${id}"]`);
+          if (target){
             links.forEach(a=>a.classList.remove('active'));
-            targetLink.classList.add('active');
-            moveUnderline(targetLink);
+            target.classList.add('active');
+            moveUnderline(target);
           }
         }
       });
-    },{
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.6   // 區塊可見 60% 時觸發
-    });
-
+    },{threshold:0.6});
     sections.forEach(sec=> sectionObserver.observe(sec));
 
     /* ---------- Skill bars animation ---------- */
@@ -205,17 +199,37 @@
       f.style.setProperty('--target-width', w);
       f.style.width = '0';
     });
-
     const skillsSection = document.getElementById('skills');
     const skillObserver = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
+      entries.forEach(e=>{
+        if(e.isIntersecting){
           fills.forEach(f=> f.style.width = f.style.getPropertyValue('--target-width'));
-          skillObserver.disconnect(); // 只執行一次
+          skillObserver.disconnect();
         }
       });
-    },{ threshold: 0.3 });
-    if (skillsSection) skillObserver.observe(skillsSection);
+    },{threshold:0.3});
+    if(skillsSection) skillObserver.observe(skillsSection);
+
+    /* ---------- Contact slide-in animation ---------- */
+    const contactSection = document.getElementById('contact');
+    const leftBlock  = document.querySelector('.contact-info');
+    const rightBlock = document.querySelector('.contact-form');
+    if (leftBlock && rightBlock) {
+      /* 起始狀態先往左右偏移並隱藏 */
+      leftBlock.classList.add('pre-slide');
+      rightBlock.classList.add('pre-slide');
+
+      const contactObserver = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            leftBlock.classList.add('slide-in');
+            rightBlock.classList.add('slide-in');
+            contactObserver.disconnect();          // 只播一次
+          }
+        });
+      },{threshold:0.4});
+      contactObserver.observe(contactSection);
+    }
 
     /* ---------- Contact form toast ---------- */
     const form = document.getElementById('contactForm');
@@ -228,8 +242,10 @@
         setTimeout(()=> note.classList.add('hidden'), 3000);
       });
     }
+
   });
 </script>
+
 
 </body>
 </html>
