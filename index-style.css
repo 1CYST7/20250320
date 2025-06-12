@@ -165,6 +165,14 @@ nav a h1 {
   font-weight: 600;
   color: #333;
 }
+.about-textbox p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+
+
+  color: #000000;
+}
 
 .about-textbox ul{padding-left:20px;margin-bottom:20px}
 .about-textbox li{margin-bottom:6px}
@@ -182,6 +190,7 @@ nav a h1 {
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   font-family: 'Playfair Display', serif;
+  font-size: 1.3em;
   }
 
 /* RWD：小螢幕自動縮小 */
