@@ -2,334 +2,386 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
 */
 
-/* 全局字體 */
+/* === 全局字體設定 === */
 body {
-  font-family: 'Noto Sans TC', 'Inter', sans-serif;
-  margin: 0;
-  
-  color: #2a2a2a;
-  
+  font-family: 'Noto Sans TC', 'Inter', sans-serif; /* 設定主要字體 */
+  margin: 0; /* 移除預設外距 */
+  color: #2a2a2a; /* 全站預設文字顏色 */
 }
-  
+
 header {
-  position: fixed;              /* 固定在畫面上 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #eee;
-  padding: 1.2rem 0;
-  z-index: 999;                 /* 確保它蓋在內容上方 */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* 淡淡陰影 */
+  position: fixed; /* 固定在畫面上方 */
+  top: 0; /* 貼齊頂部 */
+  left: 0; /* 貼齊左邊 */
+  width: 100%; /* 寬度佔滿整行 */
+  background-color: #ffffff; /* 背景白色 */
+  border-bottom: 1px solid #eee; /* 下方細線 */
+  padding: 1.2rem 0; /* 上下內距 */
+  z-index: 999; /* 疊在最上層 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* 微陰影效果 */
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1350px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  display: flex; /* 彈性排版 */
+  justify-content: space-between; /* 左右兩側對齊 */
+  align-items: center; /* 垂直置中 */
+  max-width: 1350px; /* 最大寬度 */
+  margin: 0 auto; /* 置中對齊 */
+  padding: 0 1rem; /* 左右內距 */
 }
 
-/* h1 包在 <a> 裡時樣式保持一致 */
+/* a 標籤包住 h1 時維持顏色與樣式 */
 nav a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none; /* 移除底線 */
+  color: inherit; /* 繼承顏色 */
 }
 
 nav a h1 {
-  font-family: 'Baskerville', serif;
-  font-size: 2rem;
-  margin: 0;
-  color: #2a2a2a;
+  font-family: 'Baskerville', serif; /* 指定字型 */
+  font-size: 2rem; /* 字體大小 */
+  margin: 0; /* 無外距 */
+  color: #2a2a2a; /* 深灰色字體 */
 }
 
-/* 導覽連結區 */
+/* 導覽列項目 */
 .nav-links {
-  position: relative;
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
+  position: relative; /* 為滑動底線做參考 */
+  display: flex; /* 彈性排版 */
+  gap: 1.5rem; /* 項目間距 */
+  list-style: none; /* 移除圓點 */
   padding: 0;
   margin: 0;
 }
 
 .nav-links li a {
   position: relative;
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
+  text-decoration: none; /* 移除底線 */
+  color: #555; /* 中灰色字體 */
+  font-weight: 500; /* 半粗字 */
   padding: 0.5rem 0;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* 滑過變色動畫 */
 }
 
-/* 滑鼠滑過效果 */
 .nav-links li a:hover {
-  color: #afaeae;
+  color: #afaeae; /* 滑過變色 */
 }
 
-/* 頁面 active 狀態 */
 .nav-links li a.active {
-  color: #000000;
+  color: #000000; /* 被選中的顏色 */
 }
 
-/* 滑動底線 */
+/* 導覽底線動畫條 */
 .nav-underline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: #5d5d5d;
-  transition: all 0.3s ease;
+  position: absolute;              /* 絕對定位：讓底線可以自由移動於父元素內 */
+  bottom: 0;                       /* 貼齊底部 */
+  left: 0;                         /* 貼齊左側起始位置 */
+  height: 2px;                     /* 底線高度設為 2px */
+  width: 0;                        /* 初始寬度為 0（預設不顯示） */
+  background-color: #5d5d5d;       /* 底線顏色為深灰色 */
+  transition: all 0.3s ease;       /* 動畫過渡：所有屬性變化在 0.3 秒內平滑完成 */
 }
 
 
-
-
+/* === 首頁 Hero 區塊 === */
 .hero {
-  height: 100vh;
-  background: url('img/hero-bg.jpg') center/cover fixed;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh; /* 滿版高度，100% 視窗高 */
+  background: url('img/hero-bg.jpg') center/cover fixed; 
+  /* 設定背景圖：
+     - 來源為 img/hero-bg.jpg
+     - 圖片置中 (center)
+     - 覆蓋整個區塊 (cover)
+     - fixed 表示背景圖固定在視窗中形成視差效果 */
+  position: relative; /* 為內部的絕對定位元素提供定位基準 */
+  display: flex; /* 使用 flex 排版以置中內容 */
+  align-items: center; /* 垂直置中 */
+  justify-content: center; /* 水平置中 */
 }
+
 .hero .overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
+  inset: 0; /* 四邊都設為 0，填滿父元素 */
+  background: rgba(0,0,0,0.4); /* 黑色 40% 透明度遮罩，提升文字可讀性 */
 }
+
 .hero .hero-text {
-  position: relative;
-  color: #fff;
-  text-align: center;
-  max-width: 600px;
-  padding: 0 1rem;
+  position: relative; /* 為文字區塊保留原本位置疊在 overlay 上方 */
+  color: #fff; /* 白色文字 */
+  text-align: center; /* 置中對齊 */
+  max-width: 600px; /* 最大寬度 600px，避免太寬影響閱讀 */
+  padding: 0 1rem; /* 左右內距，避免貼邊 */
 }
+
 .hero .hero-text h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3rem; /* 主標題文字大小 */
+  margin-bottom: 1rem; /* 標題與下方元素的間距 */
 }
+
 .hero .hero-btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  background: rgba(255,255,255,0.8);
-  color: #000;
-  padding: .75rem 1.5rem;
-  border-radius: 6px;
+  display: inline-block; /* 讓按鈕可設定寬高與內距 */
+  margin-top: 1.5rem; /* 與標題區塊間距 */
+  background: rgba(255,255,255,0.8); /* 淺白背景，稍微透明 */
+  color: #000; /* 黑色文字 */
+  padding: .75rem 1.5rem; /* 內距，上下0.75rem、左右1.5rem */
+  border-radius: 6px; /* 圓角按鈕 */
 }
+
 .hero .hero-btn:hover {
-  background: #fff;
+  background: #fff; /* 滑鼠懸停時，背景改為純白色 */
 }
 
-/* 背景整幅滿版 */
-.about-full-bg{
-  background:url('img/about-image.jpg') center/cover fixed;
-  min-height:100vh;
-  position:relative;          /* ⭐ 讓子元素可以用 absolute 參照這個區塊 */
+
+/* === About 區塊：整幅背景圖 === */
+/* #about ID 區塊設定背景圖與視差 */
+#about {
+  background-image: url('img/about-image.jpg'); /* 背景圖片位置 */
+  background-size: cover; /* 圖片覆蓋整個區塊 */
+  background-position: center; /* 圖片置中顯示 */
+  background-repeat: no-repeat; /* 不重複顯示圖片 */
+  background-attachment: fixed; /* 滾動視差效果：背景圖固定不動 */
 }
 
-/* 右側白色框：絕對定位貼底、貼右 */
-.about-overlay{
-  position:absolute;          /* ⭐ 關鍵：改成 absolute */
-  bottom:0;                   /* 貼齊底端 */
-  right:0;                    /* 貼齊右邊 */
-  width:50%;                  /* 想要 50% 寬度，可自行調整 */
-  height:100%;                /* 與背景同高，必要時可改 auto */
-  background:rgba(255,255,255,.9);
-  overflow-y:auto;            /* 內容超出可捲動 */
+.about-full-bg {  
+  min-height: 100vh; /* 最小高度為整個螢幕高，確保區塊至少填滿畫面 */
+  position: relative; /* 讓子元素（如 .about-overlay）可以使用絕對定位對齊此區塊 */
 }
 
-/* 內層文字排版 */
-.about-textbox{
-  padding:40px;
-  color:#333;
+/* About 右側白色區塊 */
+.about-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%; /* 佔寬度一半，呈現左右分割設計 */
+  height: 100%; /* 高度與父元素等高 */
+  background: rgba(255,255,255,.9); /* 白色，透明度 90%，保持背景可微透 */
+  overflow-y: auto; /* 若內容超出容器高度，可垂直滾動 */
+}
+
+/* 白色區塊內文字排版 */
+.about-textbox {
+  padding: 40px; /* 內距，讓文字不靠邊 */
+  color: #333; /* 主要文字顏色為深灰色 */
 }
 
 .about-textbox h2 {
-  font-size: 2.2rem;
-  line-height: 1.4;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  color: #222;
+  font-size: 2.2rem; /* 主標題字體大小 */
+  line-height: 1.4; /* 行高讓文字更好閱讀 */
+  letter-spacing: 0.5px; /* 字距稍微加寬 */
+  margin-bottom: 1rem; /* 與下方元素的間距 */
+  font-weight: bold; /* 粗體 */
+  color: #222; /* 比內文更深一些的灰色 */
 }
 
 .about-textbox h3 {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* 副標題大小 */
   line-height: 1.3;
   letter-spacing: 0.3px;
-  margin: 1.4rem 0 0.6rem;
-  font-weight: 600;
+  margin: 1.4rem 0 0.6rem; /* 上方較大間距，下方較小 */
+  font-weight: 600; /* 稍微粗體 */
   color: #333;
 }
+
 .about-textbox p {
   font-size: 1.1rem;
-  line-height: 1.5;
+  line-height: 1.5; /* 增加行距，易讀性更佳 */
   letter-spacing: 0.5px;
-
-
-  color: #000000;
+  color: #000000; /* 純黑文字 */
 }
 
-.about-textbox ul{padding-left:20px;margin-bottom:20px}
-.about-textbox li{margin-bottom:6px}
-.about-textbox a{color:#007bff;text-decoration:none}
-.about-textbox a:hover{text-decoration:underline}
-/* Skill Bars Section */
+.about-textbox ul {
+  padding-left: 20px; /* 列表縮排 */
+  margin-bottom: 20px; /* 與下方元素留白 */
+}
+
+.about-textbox li {
+  margin-bottom: 6px; /* 列表項目間距 */
+}
+
+.about-textbox a {
+  color: #007bff; /* 藍色超連結 */
+  text-decoration: none; /* 預設不顯示底線 */
+}
+
+.about-textbox a:hover {
+  text-decoration: underline; /* 滑鼠懸停時顯示底線 */
+}
 
 
+
+
+/* === Skills 區塊白底區塊 === */
+/* Skills 區塊背景設定 */
+#skills {
+  background-image: url('img/skill-image.jpg'); /* 背景圖片 */
+  background-size: cover; /* 背景填滿容器 */
+  background-position: center; /* 圖片置中對齊 */
+  background-attachment: fixed; /* 視差效果：背景不隨滾動 */
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: flex-start; /* 左對齊 */
+  align-items: stretch; /* 子元素等高 */
+}
 
 .skills-overlay {
-  background-color: rgba(255, 255, 255, 0.9);
-  background-attachment: fixed;  /* 背景固定 */
-  width: 60%;
-  height: auto;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3em;
-  }
+  background-color: rgba(255, 255, 255, 0.9); /* 白底，90% 不透明 */
+  background-attachment: fixed; /* 背景固定，可產生視差感 */
+  width: 60%; /* 寬度佔視口的 60%，通常用於大螢幕 */
+  height: auto; /* 高度依內容自動調整 */
+  padding: 40px; /* 內距，避免內容貼邊 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 底部陰影，增加立體感 */
+  font-family: 'Playfair Display', serif; /* 優雅襯線字體，提升風格一致性 */
+  font-size: 1.3em; /* 整體字體稍大，強調內容 */
+}
 
-/* RWD：小螢幕自動縮小 */
+/* Skills 區塊在小螢幕的 RWD（響應式設計） */
 @media (max-width: 900px) {
   .skills-overlay {
-    width: 90%;
-    margin: 0 auto 3vh auto;
-    padding: 24px;
+    width: 90%; /* 小螢幕時改為 90% 寬度 */
+    margin: 0 auto 3vh auto; /* 自動置中，底部留 3% 螢幕高的距離 */
+    padding: 24px; /* 內距縮小，以適應小螢幕空間 */
   }
 }
+
+/* 整體技能列區塊容器 */
 .skill-bars {
   position: relative;
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+  max-width: 800px; /* 最大寬度限制 */
+  margin: 3rem auto; /* 上下外距 3rem，左右自動置中 */
+  padding: 0 1rem; /* 左右內距 */
 }
 
+/* 技能區標題 */
 .skill-bars h3 {
   font-size: 1.75rem;
   margin-bottom: 2rem;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif; /* 支援中文的無襯線字體 */
   text-align: center;
   color: #333;
 }
 
+/* 單一技能列的容器 */
 .bar-item {
   margin-bottom: 1.5rem;
 }
 
+/* 技能名稱文字 */
 .bar-label {
-  font-weight: 600;
+  font-weight: 600; /* 半粗體 */
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  color: #444;
+  color: #444; /* 深灰色，較柔和 */
 }
 
+/* 背景進度條樣式 */
 .bar-bg {
-  background-color: #eee;
-  border-radius: 999px;
+  background-color: #eee; /* 淺灰底色 */
+  border-radius: 999px; /* 完全圓角，使其成為膠囊型 */
   height: 20px;
-  overflow: hidden;
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* 確保內部 .bar-fill 不超出範圍 */
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1); /* 內陰影，增加立體層次 */
 }
 
+/* 技能條實際填充部分 */
 .bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #bfbcbc, #787878);
-  width: 0;
+  background: linear-gradient(90deg, #bfbcbc, #787878); /* 漸層灰色條 */
+  width: 0; /* 初始寬度為 0，待動畫填充 */
   border-radius: 999px;
-  transition: width 1.5s ease-in-out;
+  transition: width 1.5s ease-in-out; /* 滑順地過渡填滿 */
 }
 
-/* 動畫載入效果 */
+/* 觸發動畫時會加上此 class */
 .bar-fill.animated {
-  animation: fillBar 2s forwards;
+  animation: fillBar 2s forwards; /* 執行 fillBar 動畫，保留最後狀態 */
 }
 
+/* 關鍵影格動畫：將 width 從 0 填到變數值 */
 @keyframes fillBar {
-  from {
-    width: 0;
-  }
-  to {
-    width: var(--target-width);
-  }
-}
-/* ---------- Portfolio 區塊外層 ---------- */
-#portfolio {
-  background-color: rgb(83, 83, 83);
-  color: #f5f5f5;
-  padding: 4rem 0; /* 上下 4rem，左右靠內層 container 控制 */
+  from { width: 0; }
+  to { width: var(--target-width); } /* 自定 CSS 變數控制目標寬度 */
 }
 
-/* ---------- 內層 container：左右保留空間 ---------- */
+
+
+
+/* === Portfolio 區塊 === */
+#portfolio {
+  background-color: rgb(83, 83, 83); /* 整體背景為深灰色 */
+  color: #f5f5f5; /* 文字預設顏色為淡灰白 */
+  padding: 4rem 0; /* 上下留 4rem 間距 */
+}
+
+/* 內部容器，左右留白 */
 .portfolio-container {
   width: auto;
-  padding: 0 10rem;  /* 左右邊距變大，讓區塊內容更集中 */
+  padding: 0 10rem; /* 左右各 10rem 間距，適合大螢幕 */
 }
 
-/* ---------- 標題 ---------- */
+/* 標題樣式 */
 .portfolio-container h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif; /* 襯線字體，提升質感 */
   font-size: 2.5rem;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.5rem; /* 底部留空與卡片區分 */
 }
 
-/* ---------- 卡片排版 ---------- */
+/* 專案網格排版：自適應欄數 */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  /* 根據螢幕寬度自動調整欄數，每欄最小 280px */
+  gap: 2rem; /* 網格之間的間距 */
 }
 
-/* ---------- 卡片樣式 ---------- */
+/* 單一專案卡片樣式 */
 .project-card {
-  background-color: #383737;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease;
+  background-color: #383737; /* 深灰背景 */
+  border-radius: 14px; /* 圓角 */
+  overflow: hidden; /* 隱藏超出部分 */
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05); /* 微弱白色陰影 */
+  transition: transform 0.3s ease; /* 滑順移動動畫 */
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 400px; /* 固定高度，讓排版整齊 */
 }
 
+/* 滑過卡片時，微微上移 */
 .project-card:hover {
   transform: translateY(-5px);
 }
 
-/* ---------- 圖片區 ---------- */
+/* 圖片背景樣式 */
 .card-img {
-  background-size: cover;
+  background-size: cover; /* 填滿區域 */
   background-position: center;
   height: 240px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* 滑順縮放動畫 */
 }
 
+/* 滑過整張卡片時，圖片略為放大 */
 .project-card:hover .card-img {
   transform: scale(1.05);
 }
 
-/* ---------- 卡片文字與按鈕區 ---------- */
+/* 卡片下方內容區塊 */
 .card-info {
   padding: 1.4rem;
   text-align: center;
-  flex: 1;
+  flex: 1; /* 讓文字區域撐滿剩餘空間 */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* 垂直置中 */
 }
 
+/* 專案標題 */
 .card-info h3 {
   margin-bottom: 1.2rem;
   font-size: 1.2rem;
   color: #f5f5f5;
 }
 
-/* ---------- 現代風格按鈕 ---------- */
+/* 嘗試按鈕樣式 */
 .try-button {
   background-color: #ffffff;
   color: #1c1c1c;
@@ -340,11 +392,14 @@ nav a h1 {
   transition: background-color 0.3s ease, transform 0.2s ease, color 0.2s ease;
 }
 
+/* 滑過按鈕時反色並放大一點點 */
 .try-button:hover {
-  background-color:#1a1a1a;
+  background-color: #1a1a1a;
   color: #ffffff;
   transform: scale(1.05);
 }
+
+/* === 響應式設計：小螢幕時縮小左右邊距 === */
 @media (max-width: 768px) {
   .portfolio-container {
     padding: 0 2rem;
@@ -352,72 +407,71 @@ nav a h1 {
 }
 
 
-/* 整體聯絡區背景 */
+/* === Contact 聯絡區塊 === */
 #contact,
 .contact-container,
 .contact-section,
 .contact-wrapper {
-  background-color: #383737;
+  background-color: #383737; /* 整體深灰背景統一風格 */
   width: 100%;
-  color: #ffffff;
+  color: #ffffff; /* 預設白字 */
 }
 
-/* 區塊間距與寬度限制 */
+/* Contact 區塊外層包裝，限制最大寬度並置中 */
 .contact-section {
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem; /* 上下間距與左右內距 */
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 左右欄排版 */
+/* 主要兩欄：聯絡資訊 & 表單 */
 .contact-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* 左右排開 */
   padding: 4rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 左側資訊欄 */
+/* 左欄：聯絡資訊 */
 .contact-info {
-  flex: 1 1 300px;
+  flex: 1 1 300px; /* 最小寬 300px，彈性縮放 */
 }
 
 .contact-info h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   font-family: 'Playfair Display', serif;
-  color:  #FFD372;
+  color: #FFD372; /* 橘黃色主標 */
 }
+
 .contact-info h3 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   font-family: 'Playfair Display', serif;
   color: #FFFFFF;
-}
-.contact-info h3 {
-  transform: translateX(3.0rem);
+  transform: translateX(3.0rem); /* 向右位移，美化排版 */
 }
 
 .contact-info p {
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
-  color: #b0afaf;
+  color: #b0afaf; /* 淺灰色文字 */
 }
 
-/* 右側表單欄 */
+/* 右欄：聯絡表單 */
 .contact-form {
-  flex: 1 1 500px;
-  background-color: #1a1a1a;
-  padding: 2rem 2.5rem;         /* 這裡加寬 padding 讓欄位更內縮 */
-  margin-left: 2rem;           /* 留右側空間避免貼邊 */
+  flex: 1 1 500px; /* 最小寬 500px，彈性縮放 */
+  background-color: #1a1a1a; /* 表單背景色：接近黑色 */
+  padding: 2rem 2.5rem;
+  margin-left: 2rem; /* 與左欄間距 */
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* 淡白光暈效果 */
   box-sizing: border-box;
 }
 
-/* 表單標籤 */
+/* 表單標籤文字 */
 .contact-form label {
   display: block;
   margin-top: 1rem;
@@ -425,11 +479,11 @@ nav a h1 {
   color: #dddddd;
 }
 
-/* 表單欄位樣式 */
+/* 表單欄位：文字輸入與多行輸入 */
 .contact-form input,
 .contact-form textarea {
-  width: 100%;           /* ✅ 固定寬度 */
-  max-width: 100%;        /* ✅ 防止手機超出，但不會撐大 */
+  width: 100%;
+  max-width: 100%;
   padding: 0.8rem 1rem;
   margin-top: 0.5rem;
   border: 1px solid #444;
@@ -438,15 +492,16 @@ nav a h1 {
   color: #f5f5f5;
   font-size: 1rem;
   box-sizing: border-box;
-  resize: vertical;       /* ✅ 限制只能改高度 */
+  resize: vertical; /* 允許垂直拉伸 textarea */
 }
 
+/* 預設提示文字 */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: #aaa;
 }
 
-/* 送出按鈕 */
+/* 送出按鈕樣式 */
 .contact-form .btn {
   margin-top: 1.5rem;
   background-color: #ffffff;
@@ -459,17 +514,18 @@ nav a h1 {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* 滑過按鈕的變化 */
 .contact-form .btn:hover {
   background-color: #333333;
   color: #ffffff;
   transform: scale(1.05);
 }
 
-/* 成功訊息區塊 */
+/* 表單提交成功後的通知區塊 */
 #notification {
   margin-top: 1rem;
-  background-color: #1e3f2f;
-  color: #aef9c7;
+  background-color: #1e3f2f; /* 深綠背景 */
+  color: #aef9c7; /* 淺綠文字 */
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
@@ -477,83 +533,67 @@ nav a h1 {
   border: 1px solid #aef9c7;
 }
 
-/* 隱藏用 */
+/* 隱藏元素（如通知欄） */
 .hidden {
   display: none;
 }
 
-/*  --- 進場前的起始狀態 --- */
+
+/* 動畫初始狀態設定：尚未進場時為透明、靜止 */
 .contact-info,
 .contact-form {
-  opacity: 0;
-  transform: translateX(0);          /* 保留原本，不讓畫面跳動 */
+  opacity: 0; /* 完全透明 */
+  transform: translateX(0); /* 沒有移動，待會會搭配 class 做動畫 */
 }
 
-.contact-info.pre-slide {            /* 左側起始：從左邊 -100px */
-  transform: translateX(-100px);
+/* 進場前的預設位移：向左 & 向右（分別給 info / form） */
+.contact-info.pre-slide {
+  transform: translateX(-100px); /* 左側往左移動 100px */
 }
 
-.contact-form.pre-slide {            /* 右側起始：從右邊 100px */
-  transform: translateX(100px);
+.contact-form.pre-slide {
+  transform: translateX(100px); /* 右側往右移動 100px */
 }
 
-/*  --- 真正的滑入動畫（1.5s）--- */
+/* 左邊區塊（聯絡資訊）的動畫定義：滑入 + 淡入 */
 @keyframes slideInLeft {
-  to { transform: translateX(0); opacity: 1; }
+  to {
+    transform: translateX(0); /* 回到原位 */
+    opacity: 1; /* 顯示 */
+  }
 }
 
+/* 右邊區塊（表單）的動畫定義：滑入 + 淡入 */
 @keyframes slideInRight {
-  to { transform: translateX(0); opacity: 1; }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
+/* 實際觸發聯絡資訊動畫的 class */
 .contact-info.slide-in {
   animation: slideInLeft 1.5s ease-out forwards;
 }
 
+/* 實際觸發聯絡表單動畫的 class */
 .contact-form.slide-in {
   animation: slideInRight 1.5s ease-out forwards;
 }
-
-
-/* 響應式排版 */
+/* RWD 響應式設計（手機版調整） */
 @media (max-width: 768px) {
   .contact-wrapper {
-    flex-direction: column;
+    flex-direction: column; /* 左右改上下堆疊 */
   }
 
   .contact-info,
   .contact-form {
-    width: 100%;
+    width: 100%; /* 滿版 */
   }
 }
 
 
-#about {
-  background-image: url('img/about-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* 跟首頁一樣視差效果 */
-}
-
-#skills {
-  background-image: url('img/skill-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;  /* ✅ 背景不跟隨滾動 */
-
-  height: auto;
-  position: relative;
-  display: flex;
-  justify-content: flex-start;   /* 白框靠左 */
-  align-items: stretch; /* 或移除 align-items 設定 */
-}
-
-
-
-
-
+/* 捲動時平滑移動 */
 html {
   scroll-behavior: smooth;
 }
-
